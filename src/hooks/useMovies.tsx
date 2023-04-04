@@ -6,7 +6,7 @@ import { MovieDBNowPlaying, Movie } from '../interfaces/movieInterface';
 export const useMovies  = () => {
    
    const [ isLoading, setIsLoafing ] = useState(true);
-   const [ peliculasActuales, setPeliculasActuales ] = useState<Movie[]>();
+   const [ peliculasActuales, setPeliculasActuales ] = useState<Movie[]>([]);
    
    const getMovies = async() => {
      
