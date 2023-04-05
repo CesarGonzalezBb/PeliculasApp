@@ -1,6 +1,12 @@
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
 
+project.ext.vectoricons = [
+    iconFontNames: [ 'Ionicons.ttf']
+]
+
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
 import com.android.build.OutputFile
 
 /**
@@ -130,6 +136,9 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+    viewBinding {
+        enabled = true
+    }
 
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
@@ -145,7 +154,7 @@ android {
             }
 
         }
-    }
+    } 
 }
 
 dependencies {
